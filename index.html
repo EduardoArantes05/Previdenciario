@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eduardo Arantes</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" xintegrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0V4LLanw2qksYuRlEzO+tcaEPQogQ0KaoIF2Xp+3t4A4d4h2u/y8K3+3L+Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #18181b; /* Tailwind: bg-zinc-900 */
+            color: #d4d4d8; /* Tailwind: text-zinc-300 */
+        }
+        .container {
+            max-width: 1200px;
+        }
+        .btn-primary {
+            /* Botão primário com fundo dourado e texto escuro */
+            @apply bg-amber-500 hover:bg-amber-600 text-zinc-900 font-semibold py-4 px-8 rounded-lg shadow-md transition duration-300 ease-in-out text-xl; /* Aumentado o padding e o tamanho do texto */
+        }
+        .btn-whatsapp {
+            /* Botão de WhatsApp com fundo verde e ícone */
+            @apply bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out flex items-center justify-center space-x-2;
+        }
+        .nav-link {
+            /* Links de navegação com texto claro e hover dourado */
+            @apply text-zinc-300 hover:text-amber-400 font-medium transition duration-300 ease-in-out;
+        }
+        .section-title {
+            /* Títulos de seção em dourado */
+            @apply text-4xl font-bold text-center mb-12 text-amber-400;
+        }
+        /* Estilo para campos de input e textarea */
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea {
+            @apply bg-zinc-800 text-zinc-200 border border-zinc-700 placeholder-zinc-500;
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        textarea:focus {
+            @apply ring-amber-400 border-amber-400;
+        }
+        /* Estilo para o container do vídeo responsivo */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        /* Classe para texto justificado */
+        .text-justify-custom {
+            text-align: justify;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-zinc-950 shadow-lg py-4 sticky top-0 z-50">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-amber-400">
+                Eduardo Arantes
+            </a>
+
+            <button id="mobile-menu-button" class="sm:hidden focus:outline-none">
+                <svg class="w-8 h-8 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+
+            <nav class="hidden sm:flex space-x-8">
+                <a href="#home" class="nav-link">Início</a>
+                <a href="#sobre" class="nav-link">Sobre</a>
+                <a href="#servicos" class="nav-link">Serviços</a>
+                <a href="#contato" class="nav-link">Contato</a>
+            </nav>
+        </div>
+
+        <nav id="mobile-menu" class="hidden sm:hidden bg-zinc-950 px-4 pt-2 pb-4 shadow-md">
+            <a href="#home" class="block py-2 nav-link">Início</a>
+            <a href="#sobre" class="block py-2 nav-link">Sobre</a>
+            <a href="#servicos" class="block py-2 nav-link">Serviços</a>
+            <a href="#contato" class="block py-2 nav-link">Contato</a>
+        </nav>
+    </header>
+
+    <section id="home" class="bg-gradient-to-r from-zinc-900 to-black text-white py-20 md:py-32 rounded-b-3xl shadow-xl">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 text-amber-400">
+                Seus Direitos Previdenciários <br class="hidden md:block"> Garantidos com Confiança
+            </h1>
+            <p class="text-lg md:text-xl mb-10 max-w-3xl mx-auto text-zinc-200">
+                Assessoria jurídica especializada para aposentadorias, auxílios e pensões.
+                Simplificamos o processo para você.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contato" class="btn-primary w-full sm:w-auto">Agende sua Consulta Gratuita</a>
+                <a href="https://wa.me/5535984080863?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20seus%20servi%C3%A7os%20previdenci%C3%A1rios." target="_blank" class="btn-whatsapp text-lg w-full sm:w-auto">
+                    <i class="fab fa-whatsapp"></i> Fale no WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="py-16 md:py-24 bg-zinc-900">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title">Sobre Célio Eduardo Almeida Dias Arantes</h2>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="https://i.ibb.co/BKgDnZMh/Whats-App-Image-2025-06-16-at-12-06-48.jpg" alt="Célio Eduardo Almeida Dias Arantes - Foto de Perfil" class="rounded-xl shadow-lg w-full h-auto object-cover">
+                </div>
+                <div class="md:w-1/2 text-lg leading-relaxed text-zinc-300 text-justify-custom">
+                    <p class="mb-6">
+                        Sou Bacharel em Direito com experiência abrangente em áreas como civil e administração pública. Destaco-me por minha liderança e gestão em projetos complexos, adquiridas durante o período de estágio.
+                    </p>
+                    <p class="mb-6">
+                        Com sólidas habilidades interpessoais e paixão pela justiça, busco oportunidades desafiadoras para contribuir efetivamente na resolução de questões jurídicas. Tenho experiência no desenvolvimento de projetos para o aprimoramento humano na região de Varginha, sendo colaborador de diversas associações beneficentes e Secretário Geral do Conselho da Juventude do município.
+                    </p>
+                    <p class="mb-6">
+                        Especializado em Direito Previdenciário, sou pós-graduado em Direito Previdenciário: Teoria e Prática (Polo Anhanguera Bocaina De Minas, julho de 2024 a maio de 2025), garantindo um profundo conhecimento e atualização constante nas leis e processos previdenciários para oferecer a melhor assessoria aos meus clientes.
+                    </p>
+                    <p>
+                        Seja para planejar sua aposentadoria, solicitar um auxílio ou revisar um benefício, estou aqui para ser seu guia e defensor.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos" class="py-16 md:py-24 bg-zinc-800">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title">Nossos Serviços Previdenciários</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-zinc-900 p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
+                    <h3 class="text-2xl font-semibold text-amber-400 mb-4">Aposentadorias</h3>
+                    <p class="text-zinc-300 mb-4">
+                        Assessoria completa para todos os tipos de aposentadoria: por idade, por tempo de contribuição, especial, por invalidez e híbrida. Análise detalhada do seu histórico contributivo.
+                    </p>
+                    <a href="https://wa.me/5535984080863?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20aposentadorias." target="_blank" class="text-amber-400 hover:text-amber-300 hover:underline font-medium">Saiba Mais →</a>
+                </div>
+                <div class="bg-zinc-900 p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
+                    <h3 class="text-2xl font-semibold text-amber-400 mb-4">Auxílios e Benefícios</h3>
+                    <p class="text-zinc-300 mb-4">
+                        Orientação e acompanhamento para solicitação de auxílio-doença, auxílio-acidente, BPC/LOAS, salário-maternidade e outros benefícios.
+                    </p>
+                    <a href="https://wa.me/5535984080863?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20aux%C3%ADlios%20e%20benef%C3%ADcios." target="_blank" class="text-amber-400 hover:text-amber-300 hover:underline font-medium">Saiba Mais →</a>
+                </div>
+                <div class="bg-zinc-900 p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
+                    <h3 class="text-2xl font-semibold text-amber-400 mb-4">Pensão por Morte</h3>
+                    <p class="text-zinc-300 mb-4">
+                        Apoio jurídico para dependentes que buscam a concessão ou revisão da pensão por morte, garantindo que todos os requisitos sejam cumpridos.
+                    </p>
+                    <a href="https://wa.me/5535984080863?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20pens%C3%A3o%20por%20morte." target="_blank" class="text-amber-400 hover:text-amber-300 hover:underline font-medium">Saiba Mais →</a>
+                </div>
+                <div class="bg-zinc-900 p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
+                    <h3 class="text-2xl font-semibold text-amber-400 mb-4">Revisão de Benefícios</h3>
+                    <p class="text-zinc-300 mb-4">
+                        Análise de possíveis erros no cálculo do seu benefício e busca por revisões que possam aumentar o valor da sua aposentadoria ou pensão.
+                    </p>
+                    <a href="https://wa.me/5535984080863?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20revis%C3%A3o%20de%20benef%C3%ADcios." target="_blank" class="text-amber-400 hover:text-amber-300 hover:underline font-medium">Saiba Mais →</a>
+                </div>
+                <div class="bg-zinc-900 p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
+                    <h3 class="text-2xl font-semibold text-amber-400 mb-4">Planejamento Previdenciário</h3>
+                    <p class="text-zinc-300 mb-4">
+                        Elaboração de um plano estratégico para sua aposentadoria, otimizando o tempo de contribuição e o valor do benefício futuro.
+                    </p>
+                    <a href="https://wa.me/5535984080863?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20planejamento%20previdenci%C3%A1rio." target="_blank" class="text-amber-400 hover:text-amber-300 hover:underline font-medium">Saiba Mais →</a>
+                </div>
+                <div class="bg-zinc-900 p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out transform hover:-translate-y-1">
+                    <h3 class="text-2xl font-semibold text-amber-400 mb-4">Cálculos Previdenciários</h3>
+                    <p class="text-zinc-300 mb-4">
+                        Realização de cálculos precisos para simulação de valores de aposentadoria, tempo de contribuição e análise de viabilidade de benefícios.
+                    </p>
+                    <a href="https://wa.me/5535984080863?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20c%C3%A1lculos%20previdenci%C3%A1rios." target="_blank" class="text-amber-400 hover:text-amber-300 hover:underline font-medium">Saiba Mais →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="py-16 md:py-24 bg-zinc-800">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="md:w-1/2 mx-auto text-lg text-zinc-300">
+                    <h3 class="text-2xl font-semibold text-amber-400 mb-6">Informações de Contato</h3>
+                    <p class="mb-4">
+                        <strong class="font-semibold">Telefone/WhatsApp:</strong>
+                        <a href="https://wa.me/5535984080863?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20seus%20servi%C3%A7os%20previdenci%C3%A1rios." target="_blank" class="text-amber-400 hover:text-amber-300 hover:underline flex items-center space-x-2">
+                            <i class="fab fa-whatsapp"></i> <span>(35) 98408-0863</span>
+                        </a>
+                    </p>
+                    <p class="mb-4">
+                        <strong class="font-semibold">E-mail:</strong> <a href="mailto:celioeduardo36@gmail.com" class="text-amber-400 hover:text-amber-300 hover:underline">celioeduardo36@gmail.com</a>
+                    </p>
+                    <p class="mb-4">
+                        <strong class="font-semibold">Endereço:</strong> Varginha, Brasil
+                    </p>
+                    <p class="mb-6">
+                        <strong class="font-semibold">Horário de Atendimento:</strong> Segunda a Sexta, das 9h às 18h
+                    </p>
+                    <div class="bg-zinc-700 rounded-lg overflow-hidden shadow-md" style="height: 250px; width: 100%;">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0658744000003!2d-46.65751968447834!3d-23.56686126743906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c86a3b2b8d%3A0x7d2b3b2b3b2b3b2b!2sRua%20da%20Consola%C3%A7%C3%A3o%2C%20222!5e0!3m2!1spt-BR!2sbr!4v1678901234567!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black text-white py-8 rounded-t-3xl shadow-inner">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-4 text-zinc-100">© 2025 Eduardo Arantes. Todos os direitos reservados.</p>
+            <div class="flex justify-center space-x-6">
+                <a href="https://www.instagram.com/juridico_com_arantes/" target="_blank" class="text-zinc-100 hover:text-amber-400 transition duration-300 ease-in-out">Instagram</a>
+                </div>
+            <p class="text-sm mt-4 text-zinc-400">
+                Lembre-se: A publicidade na advocacia é regulamentada pela OAB. Este site segue as diretrizes éticas.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript para alternar o menu móvel
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Fechar o menu móvel ao clicar em um link
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
